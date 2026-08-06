@@ -456,6 +456,48 @@
   text-decoration: none;
 }
 
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.footer {
+  min-height: 100px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer__social a {
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.footer__social a svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer__social a:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.footer__copy {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 860px) {
   .projects-grid {

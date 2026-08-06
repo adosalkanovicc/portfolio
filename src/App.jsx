@@ -4,7 +4,8 @@ import logo1 from './assets/pickleball.jpg'
 import upwork from './assets/upwork.png'
 import ca from './assets/ca.png'
 import { GitHubCalendar } from 'react-github-calendar'
-import { SiHtml5, SiCss, SiJavascript, SiReact, SiBootstrap, SiGo, SiMysql, SiGit, SiGithubactions } from 'react-icons/si'
+import { SiHtml5, SiCss, SiJavascript, SiReact, SiGo, SiMysql, SiGit, SiGithubactions } from 'react-icons/si'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 // ── Icons ─────────────────────────────────────────────────────
 const BuildingIcon = () => (
@@ -23,7 +24,6 @@ const skills = [
   { label: 'CSS3',       Icon: SiCss,           color: '#1572B6' },
   { label: 'JavaScript', Icon: SiJavascript,    color: '#F7DF1E' },
   { label: 'React',      Icon: SiReact,         color: '#61DAFB' },
-  { label: 'Bootstrap',  Icon: SiBootstrap,     color: '#7952B3' },
   { label: 'Go',         Icon: SiGo,            color: '#00ADD8' },
   { label: 'MySQL',      Icon: SiMysql,         color: '#4479A1' },
   { label: 'Git',        Icon: SiGit,           color: '#F05032' },
@@ -34,7 +34,7 @@ const skills = [
 const experiences = [
   {
     company: 'Pickleball.com',
-    duration: 'Feb 2025 — Present',
+    duration: 'Feb 2025 — Sep 2026',
     role: 'Software Engineer',
     tasks: [
       'Backend Development & Business Logic: Designing and implementing scalable RESTful APIs and core business logic for a high-traffic Pickleball platform using Golang.',
@@ -44,6 +44,7 @@ const experiences = [
       'Data Engineering: Developing scripts for analyzing, cleaning, and migrating large datasets from external sources into the internal relational architecture.',
       'System Monitoring: Utilizing tools like Grafana to monitor system health, identify bottlenecks, and ensure the high availability of the server-side infrastructure.',
       'Documentation: Maintaining comprehensive technical documentation for APIs and system architectures to facilitate team onboarding and long-term maintainability.',
+      'AI-Driven Knowledge Retrieval & Workflow Optimization: Utilized Claude to query internal technical documentation (skills.md) and project workflows, significantly accelerating problem-solving, context retrieval, and decision-making speed',
     ],
     logo: logo1,
   },
@@ -197,7 +198,7 @@ export default function App() {
               with a focus on building scalable and efficient systems. When I’m not programming, I enjoy playing football, working out, playing chess, and spending time with family and friends.
             </p>
 
-            <a href="/cv.pdf" download="CV.pdf" className="btn-cv">
+            <a href="/portfolio/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn-cv">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
@@ -263,6 +264,18 @@ export default function App() {
         </section>
         */}
       </main>
+
+      <footer className="footer">
+        <div className="footer__social">
+          <a href="https://github.com/adosalkanovicc" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/admirsalkanovic/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedin />
+          </a>
+        </div>
+        <p className="footer__copy">© {new Date().getFullYear()} Admir Salkanović</p>
+      </footer>
     </>
   )
 }
