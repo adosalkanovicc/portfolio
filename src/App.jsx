@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import './App.css'
 import logo1 from './assets/pickleball.jpg'
 import upwork from './assets/upwork.png'
 import ca from './assets/ca.png'
 import { GitHubCalendar } from 'react-github-calendar'
-import { SiHtml5, SiCss, SiJavascript, SiReact, SiGo, SiMysql, SiGit, SiGithubactions } from 'react-icons/si'
+import { SiHtml5, SiCss, SiJavascript, SiReact, SiGo, SiMysql, SiRedis, SiGit, SiGithubactions } from 'react-icons/si'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 // ── Icons ─────────────────────────────────────────────────────
@@ -26,6 +26,7 @@ const skills = [
   { label: 'React',      Icon: SiReact,         color: '#61DAFB' },
   { label: 'Go',         Icon: SiGo,            color: '#00ADD8' },
   { label: 'MySQL',      Icon: SiMysql,         color: '#4479A1' },
+  { label: 'Redis',      Icon: SiRedis,         color: '#DC382D' },
   { label: 'Git',        Icon: SiGit,           color: '#F05032' },
   { label: 'CI/CD',      Icon: SiGithubactions, color: '#2088FF' },
 ]
@@ -37,14 +38,15 @@ const experiences = [
     duration: 'Feb 2025 — Sep 2026',
     role: 'Software Engineer',
     tasks: [
-      'Backend Development & Business Logic: Designing and implementing scalable RESTful APIs and core business logic for a high-traffic Pickleball platform using Golang.',
-      'Database Optimization & Management: Managing and optimizing MySQL database, including schema design and resolving critical performance issues such as CPU spikes.',
-      'Quality Assurance & Testing: Ensuring system reliability by writing Unit tests and performing rigorous manual testing across Development, Staging, and Production environments to maintain high code quality and zero downtime deployments.',
-      'Agile Methodology & Collaboration: Actively participating in Agile/Scrum workflows, including daily stand-ups and sprint planning, while collaborating with clients, project managers, and frontend teams to translate business needs into technical solutions.',
+      'Backend Development & Architecture: Designing and implementing scalable RESTful APIs and core business logic in Go, following hexagonal (ports & adapters) architecture to keep domain logic cleanly separated from infrastructure concerns, for a high-traffic Pickleball platform serving 840K+ registered users across 7,400+ organizations and 22,000+ tournaments.',
+      'Caching & Performance: Introduced Redis caching for frequently accessed, high-read endpoints to reduce database load and cut response latency, working with cache invalidation strategies and TTL-based expiration to keep cached data consistent with the underlying MySQL database.',
+      'Performance Optimization: Diagnosed and resolved multiple production CPU spikes on a 190+ GB MySQL database by analyzing active database processes and query execution — including adding a missing index on a slow query and optimizing a scheduled job that computed statistics across a large volume of matches and tournaments.',
+      'Quality Assurance & Testing: Ensuring system reliability by writing unit tests and performing rigorous manual testing across Development, Staging, and Production environments, and monitoring deployments post-merge to catch issues early and maintain zero-downtime releases.',
+      'Agile Methodology & Collaboration: Working within a backend engineering team (alongside frontend engineers and a PM), actively participating in Agile/Scrum workflows including daily stand-ups and sprint planning, and collaborating with clients, project managers, and frontend teams to translate business needs into technical solutions.',
       'Data Engineering: Developing scripts for analyzing, cleaning, and migrating large datasets from external sources into the internal relational architecture.',
-      'System Monitoring: Utilizing tools like Grafana to monitor system health, identify bottlenecks, and ensure the high availability of the server-side infrastructure.',
-      'Documentation: Maintaining comprehensive technical documentation for APIs and system architectures to facilitate team onboarding and long-term maintainability.',
-      'AI-Driven Knowledge Retrieval & Workflow Optimization: Utilized Claude to query internal technical documentation (skills.md) and project workflows, significantly accelerating problem-solving, context retrieval, and decision-making speed',
+      'System Monitoring: Utilizing Grafana and Sentry to monitor system health, track errors, identify bottlenecks, and ensure high availability of the server-side infrastructure.',
+      'AI-Assisted Development: Leveraging AI coding assistants (Cursor, Copilot, Cody, Claude) to accelerate implementation, with all generated code going through careful review and testing before merging.',
+      'Documentation: Maintaining comprehensive technical documentation for APIs and system architecture to facilitate team onboarding and long-term maintainability.',
     ],
     logo: logo1,
   },
@@ -194,8 +196,13 @@ export default function App() {
             <p className="section-label">Who I am</p>
             <h2>About Me</h2>
             <p>
-              👋 I&apos;m Admir, a Software Engineer specializing in backend development
-              with a focus on building scalable and efficient systems. When I’m not programming, I enjoy playing football, working out, playing chess, and spending time with family and friends.
+              👋 I&apos;m Admir, a Backend Software Engineer with production experience building scalable RESTful APIs in Go,
+              working in a backend team serving a high-traffic platform with 840K+ registered users and a 190+ GB MySQL database.
+              Experienced in hexagonal architecture, Redis caching, database performance diagnostics, and production observability
+              with Grafana and Sentry. Comfortable owning features end-to-end, from design through deployment and monitoring.
+            </p>
+            <p style={{ marginTop: '0.9rem' }}>
+              Outside of work, I enjoy hanging out with friends and family, playing chess, football, and working out.
             </p>
 
             <a href="/portfolio/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn-cv">
